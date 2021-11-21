@@ -1,37 +1,14 @@
-## Welcome to GitHub Pages
+BridgeDeck
+========
 
-You can use the [editor on GitHub](https://github.com/suyuhui1/suyuhui1.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
+[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu) 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+这是吴昊博客目前在使用的一款导航页StartPage
+演示地址：https://www.whsir.com/
 
-### Markdown
+其中3.js是鼠标滑动中的特效，这个js的出处也不知道出自哪里了，如果你知道原作者，可以给我留言备注！
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+整体导航代码基于第三方进行二次修改，时间太久远，已找不到原作者地址了，有些人很喜欢我这个导航页，于是我这里开源出来
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/suyuhui1/suyuhui1.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+如果你觉得该页面对你有所帮助，欢迎各位老板[打赏](https://blog.whsir.com/post-4043.html)：https://blog.whsir.com/post-4043.html
