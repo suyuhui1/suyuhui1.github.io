@@ -1,0 +1,159 @@
+﻿<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="renderer" content="webkit">
+	<link rel="shortcut icon" href="favicon.ico" /> 
+	<title>苏玉辉博客导航页</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" id="fontawesome-style-css" href="1.css" type='text/css' media='all' />
+		
+</head>
+<style>
+    #btn {
+        width: 30px;
+        height: 30px;
+        background: url("https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3602163562,639853602&fm=26&gp=0.jpg") no-repeat;
+        background-size: 100% 100%;
+        -webkit-background-size: 100% 100%;
+        -moz-background-size: 100% 100%;
+        -ms-background-size: 100% 100%;
+        -o-background-size: 100% 100%;
+        position: fixed;
+        top: 2.1866666666666665rem;
+        right: 0.22rem;
+        z-index: 6666;
+    }
+</style>
+<body ondragstart="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false" onselectstart="event.returnValue=false">
+<div id="container">
+	
+	<div id="btn">
+        <audio id="audio-player" ref="audio" preload="preload" autoplay="autoplay" loop="loop">
+            <source src="https://sharefs.ali.kugou.com/202111210919/08512a82af6dc7391d3a581e4a12c2a9/KGTX/CLTX001/5f302ebd7ff308c0c7d9b62f87cb4142.mp3" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
+	<div>
+	<a href="/"><img src="rewrite_now.png"  ></a>
+	<br/>
+	<br/>
+	  <h1 id="h1">君子以坦荡立于世间</h1>	
+        <h2 id="h2">必将步步生花</h2>
+		<br/>
+		<br/>
+		<h3 id="h3">
+		<a href="./index1.html#now" target="_blank" >博客首页</a> -
+		<a href="./3D相册.html#now" target="_blank" >相册</a> -
+	    <a href="http://lcoc.top/m666/" target="_blank" >音乐</a> -
+		<a href="https://www.martinku.cn" target="_blank" >资源</a> -
+		</h3>
+		<br/>
+		<span>欢迎来到博客导航页</span>
+		<br/>
+		<p>
+		<br/>
+		<br/>
+		<a href="http://www.beian.miit.gov.cn" target="_blank" rel="nofollow"></a>
+		</p>
+		<br/>
+	</div>
+</div>
+<canvas id="canvas" width="1920" height="849"></canvas>
+
+<script type='text/javascript' src='2.js'></script>
+<script type='text/javascript' src='3.js'></script>
+<!--Github:https://github.com/whsir/BridgeDeck-->
+
+</body>
+</html>
+<script>
+    let isWeixin = () => {
+        let ua = window.navigator.userAgent.toLowerCase()
+        return;
+        /micromessenger/
+            .test(ua)
+    }
+    // method 自动播放
+    let audioPlayer = (id) => {
+        let audio = document.getElementById(id)
+        if (isWeixin()) {
+            document.addEventListener(
+                'WeixinJSBridgeReady'
+                , () => {
+                    audio.play()
+                }, false);
+
+            // 添加 getNetworkType 的判断原因, 请看问题分析2
+            if (typeof window.
+                WeixinJSBridge
+                ==
+                "object"
+                && typeof window.
+                    WeixinJSBridge
+                    .invoke ==
+                "function"
+            ) {
+                window.
+                    WeixinJSBridge
+                    .invoke(
+                        'getNetworkType'
+                        , {}, () => {
+                            audio.play()
+                        })
+            }
+        } else {
+            // audio.play();
+            let touchPlay = () => {
+                audio.play();
+                document.removeEventListener(
+                    'touchstart'
+                    , touchPlay, false)
+            };
+            if (audio.paused) {
+                document.addEventListener(
+                    'touchstart'
+                    , touchPlay, false)
+            }
+        }
+    }
+    // 使用
+    audioPlayer(
+        'audio-player'
+    );
+
+    var audio = document.getElementById("audio-player");
+    var btn = document.getElementById("btn");
+    var rotateVal = 0;
+
+    var InterVal;     // 定时器
+    // 设置定时器
+    function rotate() {
+        InterVal = setInterval(function () {
+            rotateVal += 4;
+            // 设置旋转属性(顺时针)
+            btn.style.transform = 'rotate(' + rotateVal + 'deg)';
+            // 设置旋转属性(逆时针)
+            //img.style.transform = 'rotate(-' + rotateVal + 'deg)'
+            // 设置旋转时的动画  匀速0.1s
+            btn.style.transition = '0.1s linear'
+        }, 100)
+    }
+    // rotate();
+    btn.onclick = function () {         //点击按钮播放停止
+        if (audio.paused) { //判断当前的状态是否为暂停，若是则点击播放，否则暂停
+            audio.play();
+            rotate()
+        } else {
+            audio.pause();
+            clearInterval(InterVal)
+        }
+    };
+
+</script>
+
